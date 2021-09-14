@@ -8,11 +8,20 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+button {
+  font-family: "Raleway", sans-serif;
+}
+
+/* ==============================================
+ HEADER
+   ==============================================*/
+
 header {
   display: flex;
   width: 90%;
   margin: auto;
   align-items: center;
+  height: 10vh;
 }
 
 .logo-container,
@@ -45,7 +54,194 @@ nav {
   text-decoration: none;
 }
 
+/* HOVER */
+.nav-link:focus,
+.nav-link:hover,
+.nav-link a:active {
+  color: #c5c5;
+  transition: 0.3s ease;
+}
+
+.nav-link:active {
+  border-bottom: 1px solid #c5c5;
+}
+
 .cart {
   justify-content: end;
   flex: 1;
+}
+
+/* ==============================================
+ MAIN
+   ==============================================*/
+
+.presentation {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  min-height: 80vh;
+  align-items: center;
+}
+
+.introduction {
+  flex: 1;
+}
+
+.intro-text {
+  font-size: 44px;
+  font-weight: 400;
+  background: linear-gradient(to right, #ccc, #c5c5);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.intro-text p {
+  margin-top: 5px;
+  font-size: 22px;
+  color: lightslategrey;
+}
+
+.cta {
+  padding: 50px 0px 0px 0px;
+}
+
+.cta-select {
+  border: 2px solid #c5c5;
+  background: transparent;
+  color: #c5c5;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cta-select:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+.cta-add {
+  border: none;
+  background: #c5c5;
+  color: white;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 30px 0px 0px 30px;
+}
+
+.cta-add:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+.cover {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.cover img {
+  height: 100%;
+  filter: drop-shadow(0px 5px 3px);
+  animation: drop 1.5s ease;
+}
+
+.big-circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0.7;
+  height: 70%;
+}
+
+.medium-circle {
+  position: absolute;
+  top: 30%;
+  right: 30%;
+  z-index: -1;
+  opacity: 0.7;
+  height: 50%;
+}
+
+.small-circle {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  z-index: -1;
+  opacity: 0.7;
+  /* height: 50%; */
+}
+
+.camera-select {
+  position: absolute;
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+  right: 20%;
+  height: 1vh;
+}
+
+/* ==============================================
+ ANIMATION
+   ==============================================*/
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* ==============================================
+ MEDIA QUERIES
+   ==============================================*/
+
+@media screen and (max-width: 1024px) {
+  .presentation {
+    flex-direction: column;
+  }
+
+  .introduction {
+    margin-top: 5vh;
+    text-align: center;
+  }
+
+  .intro-text {
+    font-size: 30px;
+  }
+
+  .intro-text p {
+    font-size: 18px;
+  }
+
+  .cta {
+    padding: 10px 0px 0px 0px;
+  }
+
+  .camera-select {
+    height: 1vh;
+    bottom: 5%;
+    right: 50%;
+    width: 50%;
+    transform: translate(50%, 5%);
+  }
+
+  .cover img {
+    height: 60%;
+  }
+
+  .small-circle,
+  .medium-circle,
+  .big-circle {
+    opacity: 0.2;
+  }
 }
